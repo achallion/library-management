@@ -1,6 +1,6 @@
 #include <boost/algorithm/string.hpp>
 #include <stdio.h>
-#include "getch.hpp"
+#include "conio.hpp"
 #include <stdlib.h>
 
 using namespace boost;
@@ -15,12 +15,12 @@ bool login() // Asks For librarian login
 {
     clrscr(os); //clears the screen
     char ch;
-    user temp, correct;     //temp is for user input and correct is correct username and password
+    user temp, correct; //temp is for user input and correct is correct username and password
     cout << "\t\t\t\t\t\t\t\t\t\t\t AUTHENTICATION PAGE \n\t\t\t\t\t\t\t\t\t\t\t---------------------\n\t\t\t\t\t\t\t\t\t\t\t---------------------";
     cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t Username : ";
-    getline(cin, temp.username);    //input username
+    getline(cin, temp.username); //input username
     cout << "\n\n\n\n\n\t\t\t\t\t\t\t\t Password : ";
-    do      // Input password in coded form
+    do // Input password in coded form
     {
         ch = getch();
         if ((int)ch == 10)
