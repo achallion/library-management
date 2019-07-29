@@ -1,18 +1,19 @@
 #include <iostream>
-#include <string>
-#include <fstream>
+#include <stdlib.h>
+#include "conio.hpp"
+#include <time.h>
 
 using namespace std;
 
-char os[] = "linux";
-
-#include "welcomepage.cpp"
-#include "loginpage.cpp"
-#include "resetpage.cpp"
+#include "welcome.cpp"
+#include "login.cpp"
+#include "adminfunctions.cpp"
 #include "adminpage.cpp"
 
 int main()
 {
-    cout << login();
-    return 0;
+    welcome();
+    sleep(2);
+    login();
+    adminpage();
 }
