@@ -33,6 +33,23 @@ class book
         }
 };
 
+struct member
+{
+    string code;
+    string name;
+    string number;
+    int age;
+    int validtillyear;
+    void makecode()
+    {
+        code = name[0];
+        code += name[1];
+        code += number[9];
+        code += (char)(48 + (age % 10));
+        code += (char)(48 + (validtillyear % 10));
+    }
+};
+
 int book ::totalbooktypes = 0;
 
 int graphics()
@@ -62,11 +79,11 @@ int graphics()
 
 void addbook()
 {
+    clrscr(os);
     ofstream fout;
     fout.open("./datafile/books.dat",ios :: out | ios :: binary);
     if(fout.fail())
     {
-        clrscr(os);
         cout << "Error : Can't Open File\nPlease Retry";
         return;
     }
@@ -79,5 +96,24 @@ void addbook()
 
 void addmember()
 {
-
+    welcome();
+    ofstream fout("./datafile/members.dat", ios ::out | ios ::binary);
+    if(fout.fail())
+    {
+        cout << "Error : Can't Open File\nPlease Retry";
+        return;
+    }
+    member temp;
+    cout << "\n\n\n\n\t\tEnter Member Name : ";
+    getline(cin, temp.name);
+    cout << "\n\n\t\tEnter Phone Number for Member : ";
+    getline(cin, temp.number);
+    cout << "\n\n\t\tEnter Age : ";
+    cin >> temp.age;
+    cout << "\n\n\t\tEnter Valid Till Year : ";
+    cin >> temp.validtillyear;
+    temp.makecode();
+    cout << "\n\n\n\t\tYour Code Is " << temp.code;
+    fout.write((char *)&temp, sizeof(temp));
+    fout.close();
 }

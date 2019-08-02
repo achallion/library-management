@@ -7,10 +7,10 @@ void adminpage()
         case 1 :
             addbook();
             break;
-        /*case 2 :
+        case 2 :
             addmember();
             break;
-        case 3 :
+        /*case 3 :
             removebook();
             break;
         case 4 :
