@@ -1,37 +1,38 @@
 void adminpage()
 {
+    welcome();
     int x = graphics();
     switch(x)
     {
         case 1 :
-            nbooks();
+            addbook();
             break;
-        case 2 :
-            nmember();
+        /*case 2 :
+            addmember();
             break;
         case 3 :
-            rbooks();
+            removebook();
             break;
         case 4 :
-            rmember();
+            removemember();
             break;
         case 5 :
-            ibooks();
+            issuebook();
             break;
         case 6 :
-            dbooks();
+            depositbook();
             break;
         case 7 :
-            vmember();
+            viewmember();
             break;
         case 8 :
-            vstock();
+            viewstock();
             break;
         case 9 :
-            lbooks();
+            listissuedbooks();
             break;
         case 10 :
             exit(1);
-            break; 
+            break; */
     }
 }
